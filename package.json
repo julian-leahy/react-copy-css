@@ -1,6 +1,6 @@
 {
-  "name": "react-copy-css",
-  "displayName": "React Copy CSS",
+  "name": "react-copy-css-rules",
+  "displayName": "React Copy CSS Rules",
   "description": "Copy classNames from react components to clipboard",
   "publisher": "Mega Bite",
   "icon": "icon.png",
@@ -15,9 +15,9 @@
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
-      "title": "React Copy CSS",
+      "title": "React Copy CSS Rules",
       "properties": {
-        "react-css-copy-and-replace.useCssModules": {
+        "React-Copy-CSS-Rules.useCssModules": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the use of CSS modules."
@@ -26,8 +26,8 @@
     },
     "commands": [
       {
-        "command": "extension.copyReplaceClassName",
-        "title": "Copy classNames"
+        "command": "extension.copyCssRules",
+        "title": "Copy CSS Rules"
       }
     ]
   },
