@@ -5,8 +5,22 @@ export function activate(context: vscode.ExtensionContext) {
     "extension.copyCssRules",
     async () => {
       const config = vscode.workspace.getConfiguration("React-Copy-CSS-Rules");
+      // support for css modules true | false
       const useCssModules = config.get("useCssModules");
-      console.log("use css modules", useCssModules);
+
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+
+      const document = editor.document;
+      const fullText = document.getText();
+      const classNames = fullText.match(/className="([^"]*)"/g) || [];
+
+      if (classNames.length === 0) {
+        vscode.window.showInformationMessage("No class names found");
+        return;
+      }
     }
   );
 
