@@ -1,7 +1,9 @@
 {
   "name": "react-copy-css",
-  "displayName": "React copy css",
-  "description": "todo",
+  "displayName": "React Copy CSS",
+  "description": "Copy classNames from react components to clipboard",
+  "publisher": "Mega Bite",
+  "icon": "icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
@@ -12,10 +14,20 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "React Copy CSS",
+      "properties": {
+        "react-css-copy-and-replace.useCssModules": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable or disable the use of CSS modules."
+        }
+      }
+    },
     "commands": [
       {
-        "command": "react-copy-css.helloWorld",
-        "title": "Hello World"
+        "command": "extension.copyReplaceClassName",
+        "title": "Copy classNames"
       }
     ]
   },
