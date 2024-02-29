@@ -2,7 +2,7 @@
   "name": "react-copy-css-rules",
   "displayName": "React Copy CSS Rules",
   "description": "Copy classNames from react components to clipboard",
-  "publisher": "Mega Bite",
+  "publisher": "Byte Me",
   "icon": "icon.png",
   "version": "0.0.1",
   "engines": {
