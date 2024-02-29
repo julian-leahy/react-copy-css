@@ -37,6 +37,29 @@ export function activate(context: vscode.ExtensionContext) {
       const classNamesString = cleanedClassNames.join("\n\n");
 
       await vscode.env.clipboard.writeText(classNamesString);
+      vscode.window.showInformationMessage("Copied CSS rules to clipboard.");
+
+      // Transform the class names in the document to use CSS modules.
+      if (useCssModules) {
+        const newText = fullText.replace(
+          /className="([^"]*)"/g,
+          (match: string, group: string) =>
+            `className={\`${group
+              .split(" ")
+              .map((className) => "${styles." + className + "}")
+              .join(" ")}\`}`
+        );
+
+        editor.edit((editBuilder) => {
+          const firstLine = document.lineAt(0);
+          const lastLine = document.lineAt(document.lineCount - 1);
+          const textRange = new vscode.Range(
+            firstLine.range.start,
+            lastLine.range.end
+          );
+          editBuilder.replace(textRange, newText);
+        });
+      }
     }
   );
 
