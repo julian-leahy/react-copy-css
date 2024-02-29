@@ -1,71 +1,19 @@
-# react-copy-css README
+# React Copy CSS Extension for Visual Studio Code
 
-This is the README for your extension "react-copy-css". After writing up a brief description, we recommend including the following sections.
+This extension provides a command `Copy CSS Rules` that automates the process of replacing `className` attributes in your JSX/TSX files with a `styles` object reference and copies the original class names to your clipboard in a CSS format.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1. **Copy Class Names**: Extracts all `className` attributes from the active document and copies them to your clipboard in a CSS format. For example, `className="myClass"` would be copied as `.myClass{}`.
 
-For example if there is an image subfolder under your extension project workspace:
+2. **Replace Class Names**: Replaces all `className` attributes in the active document with a `styles` object reference. For example, `className="myClass"` would be replaced with `className={styles.myClass}`.
 
-\!\[feature X\]\(images/feature-x.png\)
+3. **Supports CSS Modules**: This extension is designed to work with CSS Modules. It will only replace class names that are defined in the same file as the JSX/TSX file.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+4. **Supports Regular CSS**: Uncheck the `cssModules` option in the settings to use regular CSS.
 
-## Requirements
+## Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+1. Open a JSX/TSX file in Visual Studio Code.
+2. Run the command `Copy CSS Rules`.
+3. The extension will replace all `className` attributes in the active document with `styles` object references and copy the original class names to your clipboard in a CSS format.
